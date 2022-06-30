@@ -23,6 +23,7 @@ numero_dos_pinos = {
     "10": 6
 }
 
+# Já que x é o contador de pinos derrubados, seria legal usar um nome mais descritivo do que apenas x. "pinos_derrubados" é uma sugestão
 x=0
 while x < 10:
     # Perceba que o usuário não sabe o que precisa digitar para jogar. Seria legal informar algo como "Digite S para jogar, ou qualquer outra coisa para encerrars" 
@@ -36,11 +37,12 @@ while x < 10:
         for pino in jogada:
             posicao = numero_dos_pinos[str(pino)]
             if pista[posicao] == "_":
-                x = x - 1
                 print("Você não derrubou nada")
             else:
-                pista[posicao] = "_"          
-        x = x + 1
+                pista[posicao] = "_"
+                # Note que assim você apenas soma 1 em x caso um pino seja derrubado. 
+                # É uma solução mais simples que a anterior, em que você precisava subtrair 1 quando o pino não era derrubado          
+                x = x + 1
 
         mostra_pista(pista)
     else:
