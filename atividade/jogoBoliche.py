@@ -25,8 +25,13 @@ numero_dos_pinos = {
 
 x=0
 while x < 10:
+    # Perceba que o usuário não sabe o que precisa digitar para jogar. Seria legal informar algo como "Digite S para jogar, ou qualquer outra coisa para encerrars" 
     jogar = str(input ("Seja Bem Vindo(a) ao Jogo de Boliche\n\nDeseja jogar ou encerrear?: "))
-    if jogar ("s") or ("S"):
+    # Esta linha debaixo não funcionou. 
+    # Talvez você tenha atualizado e esquecido de fazer o git push para atualizar o código no GitHub também
+    if jogar == "s" or jogar == "S":  # outra alternativa seria converter jogar para maiúsculo usando jogar.upper(), assim só seria preciso compará-lo com "S"
+        
+        # Perceba que este random.randint só retorna um único número por vez, por isso fazer uma lista com um único número pode não ser o caminho mais fácil
         jogada = [random.randint(1, 10)]
         for pino in jogada:
             posicao = numero_dos_pinos[str(pino)]
